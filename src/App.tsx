@@ -11,7 +11,7 @@ function App() {
       <BrowserRouter>
         <Navbar />
         <Routes>
-          <Route path="" element={<Main />} />
+          <Route path="ITGS/IA" element={<Main />} />
         </Routes>
       </BrowserRouter>
     </div>
