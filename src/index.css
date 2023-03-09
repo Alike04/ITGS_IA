@@ -1,0 +1,21 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald&family=Open+Sans&display=swap");
+
+:root {
+  --primary-color: #165581;
+  --text-color: #6f6f6f;
+}
+.btn {
+  font-size: xx-large;
+  font-weight: 100;
+  font-family: "Roboto";
+  color: white;
+  padding-inline: 1.5rem;
+  padding-block: 1rem;
+  border: white 2px solid;
+  transition: all 300ms ease;
+}
+
+.btn:hover {
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+}
