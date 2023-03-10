@@ -5,9 +5,13 @@ import { IconContext } from "react-icons/lib/esm/iconContext";
 import { Element } from "react-scroll";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
-import GoogleMapReact from "google-map-react";
+import { YMaps, Map, Placemark } from "@pbe/react-yandex-maps";
 
 const Main = () => {
+  const defaultState = {
+    center: [51.128066, 71.411529],
+    zoom: 15,
+  };
   return (
     <div className="container">
       <Element name="landing" className="banner image1">
@@ -26,7 +30,8 @@ const Main = () => {
             gridRow: "4/5",
           }}
         >
-          РАЗРУШАЙТЕСЬ, ВОЗЬМИТЕ КОНТРОЛЬ, ЖИВИТЕ ЦЕЛЬЮ И ЗАРАБАТЫВАЙТЕ БОЛЬШЕ ДЕНЕГ.
+          РАЗРУШАЙТЕСЬ, ВОЗЬМИТЕ КОНТРОЛЬ, ЖИВИТЕ ЦЕЛЬЮ И ЗАРАБАТЫВАЙТЕ БОЛЬШЕ
+          ДЕНЕГ.
         </p>
       </Element>
       <div className="divider" style={{ height: "3vh" }}></div>
@@ -68,7 +73,31 @@ const Main = () => {
         </IconContext.Provider>
       </Element>
       <div className="divider" style={{ height: "3vh" }}></div>
-      <Element name="about" className="banner image2"></Element>
+      <Element name="about" className="banner image2">
+        <div
+          style={{
+            width: "500px",
+            marginLeft: "160%",
+            marginTop: "100px",
+          }}
+        >
+          <p className="list-item">Tpeнep тренажерного зала Призёр</p>
+          <p className="list-item">
+            Республики Казахстан - по Street Lifting Двух кратный чемпион г.
+            Астаны - по Street Lifting
+          </p>
+          <p className="list-item">
+            Участник чемпионата от Федерации (WBPF/2019)
+          </p>
+          <p className="list-item">
+            Чемпионат Казахстана и Азии - по бодибилдингу и фитнесу
+          </p>
+          <p className="list-item">
+            Участник чемпионата от Федерации (GPA NABBA) в рамках спортивной
+            лиги (соревнования по бодибилдингу и фитнесу)
+          </p>
+        </div>
+      </Element>
       <div className="divider" style={{ height: "3vh" }}></div>
 
       <Element
@@ -95,13 +124,22 @@ const Main = () => {
           className="carousel-holder"
         >
           <div>
-            <img src="/images/1.png" alt="" />
+            <img
+              src="https://media.discordapp.net/attachments/582231592282619924/1083759821091778601/1.png?width=436&height=668"
+              alt=""
+            />
           </div>
           <div>
-            <img src="/images/2.png" alt="" />
+            <img
+              src="https://media.discordapp.net/attachments/582231592282619924/1083759821435699330/2.png?width=610&height=596"
+              alt=""
+            />
           </div>
           <div>
-            <img src="/images/3.png" alt="" />
+            <img
+              src="https://media.discordapp.net/attachments/582231592282619924/1083759821746081935/3.png?width=550&height=670"
+              alt=""
+            />
           </div>
         </Carousel>
       </Element>
@@ -111,7 +149,30 @@ const Main = () => {
         className="banner image3"
         style={{ height: "100vh" }}
       >
-        <GoogleMapReact></GoogleMapReact>
+        <div>
+          <h1
+            style={{
+              color: "white",
+              textAlign: "center",
+              marginLeft: "50%",
+              marginTop: "30%",
+            }}
+          >
+            Местоположение
+          </h1>
+          <YMaps>
+            <Map
+              defaultState={defaultState}
+              style={{
+                width: "400px",
+                height: "500px",
+                marginLeft: "30%",
+              }}
+            >
+              <Placemark geometry={[55.684758, 37.738521]} />
+            </Map>
+          </YMaps>
+        </div>
       </Element>
     </div>
   );

@@ -38,9 +38,7 @@ const Navbar = () => {
         backgroundColor: isShrunk ? "rgba(0,0,0,0.8)" : "transparent",
       }}
     >
-      <NavLink to="/" className="logo">
-        LR
-      </NavLink>
+      <NavLink to="/" className="logo"></NavLink>
       <nav className="nav" ref={navRef}>
         <ul className="menu">
           <li>
